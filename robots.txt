@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://babysorvetes.com.br/sitemap-index.xml
+Sitemap: http://babysorvetes.com.br/sitemap-index-1.xml
+Sitemap: http://babysorvetes.com.br/sitemap.xml

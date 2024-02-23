@@ -1,0 +1,95 @@
+/*PADRÃO*/
+.toggle,[id^=drop] 			{ display: none; }
+
+nav                     	{ margin:0 auto; padding: 0; width: 100%; z-index: 9999999999; position: relative; max-width:1400px; display: block; border-radius:50px; }
+nav label 					{content: "";}
+nav:after               	{ content:""; display:table; clear:both; }
+nav a                   	{ display:block; font-size:16px; text-transform: uppercase; text-decoration:none; font-weight: 400; text-align: center;}
+nav a:hover 				{ color:#3AA635;}
+.topo_home nav 				{ background: #ffffff;}
+.topo_home nav a			{ color:#2580BF; border-right:1px solid #3AA635;}
+.topo_home nav a:hover 		{ color:#3AA635;}
+.topo_paginas nav			{ background: #2580BF;}
+.topo_paginas nav a			{ color:#fff; border-right:1px solid #3AA635;}
+
+
+/*MENU*/
+nav ul                  		{ float: left; padding:0; margin:0; list-style: none; width: 100%; display: block; }
+nav ul li               		{ margin: 0 auto; float: left; width: 25%;  text-align: center; position: relative; transition: 0.2s; padding: 12px 0;}
+nav ul li.primeiro 				{ border-radius: 50px 0 0 50px;}
+nav ul li.ultimo 				{ border-radius: 0 50px 50px 0;}
+nav ul li.ultimo a				{ border: none;}
+.topo_paginas nav ul li:hover 	{ background: #3AA635;}
+
+/*SUBMENU*/
+nav ul li ul            	{ display: none; position: absolute; z-index: 99999999; }
+nav ul li:hover > ul    	{ display: block ; }
+nav ul li ul li            	{ width:300px; float:none; display:list-item; background: #f1f1f1; padding: 0; border-bottom: 1px solid #dadad9; text-align: left;}
+nav ul li ul li:hover 		{ background: #dadad9; border: none;  border-bottom: 1px solid #dadad9; }
+nav ul li ul li a          	{ color: #3AA635; padding:10px 20px; font-size: 13px}
+nav ul li ul li:hover a   	{ font-weight: bold;  }
+
+/*MENU TERCEIRO NIVEL*/	
+nav ul li ul li ul 	        		{ position: absolute; top:0; left:250px; z-index: 9999999;}
+nav ul li ul li ul li 				{ background: #dadad9; text-align: left;}
+nav ul li ul li ul li:hover a		{ font-weight: bold; }
+
+/*MENU QUARTO NIVEL*/	
+nav ul li ul li ul li ul 	        { position: absolute; top:50px; left:0; z-index: 9999999;}
+nav ul li ul li ul li ul			{ background: #dadad9; text-align: left;}
+nav ul li ul li ul li:hover a		{ font-weight: bold; }
+
+
+@media screen and (max-width : 1150px) {
+	.topo_home nav 				{ background: none;}
+	.topo_paginas nav			{ background: none;}
+	nav ul li.primeiro 			{ border-radius: 0;}
+	nav ul li.ultimo 			{ border-radius: 0;}
+   .topo_home nav a:hover 		{ color:#fff;}
+   .topo_paginas nav a			{ color:#2580BF; }
+   nav ul						{ margin-top: 50px;}
+
+	[id^=drop]:checked + ul { display: block;}
+
+	.barras                 { float: right; margin-right:20px; cursor: pointer;}
+	.barras:hover 			{ background: none}
+    .barras i               { font-size: 30px; color:#3AA635; float: right; right: 0;}
+	.toggle + a, .menu_resp { display: none;  }
+	.toggle 				{ display: block;  color:#999; font-size:14px; text-decoration:none; border:none; }
+	.toggle a:hover 		{ color: #fff; }	
+	nav label:hover 		{ background: #fff;}
+	label.submenu 			{ margin: 0; padding: 0;};
+
+	
+	/*MENU*/
+	nav                     { margin: 15px 0; border-radius:0;}
+	nav a  					{ padding:14px 20px;}
+	nav ul li 				{  display: block; background: #fff; width: 100%; border-radius: 0; padding: 0; border-bottom: 1px solid #3AA635; text-align: left;}
+	nav ul li:hover 		{ background: none; background: #2580BF; border: none; border-bottom: 1px solid #fff; color: #fff;}
+	nav ul li.linha 		{ border-left:none;}
+
+
+	/*SUBMENU*/
+	nav ul li ul 				{ position: relative; width: 100%; left: 0; top:0; margin: 0 auto;}
+	nav ul li ul li 			{ width: 100%; display: block; background-color: #2580BF;}
+	nav ul li ul li .toggle		{ background-color: #2580BF;}
+	nav ul li ul li a			{ color:#fff;}
+	nav ul li ul li:hover 		{ background: #CCC;}
+	nav ul li ul li:hover a		{ color: #FFF;}
+	
+	nav ul li ul li:hover .toggle		{ background: #CCC;}
+
+	/*MENU TERCEIRO NIVEL*/
+	nav ul li ul li ul   			{ position: relative; width: 100%; left: 0;}
+	nav ul li ul li ul li			{background: #77787B;}	
+	nav ul li ul li ul li a			{ color:#FFF; font-size:14px; }
+	nav ul li ul li ul li:hover a 	{ background-color: #2580BF; color:#FFF;}	
+  		
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul 		{ display: none; }
+
+}
+
+@media all and (max-width : 330px) {
+	nav ul li { display:block; width: 100%; }
+}
